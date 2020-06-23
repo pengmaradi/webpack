@@ -1,0 +1,37 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "file-loader": "3.0.1",
+    "foundation-sites": "6.5.3",
+    "jquery": "3.4.0",
+    "jquery-lazy": "1.7.10",
+    "lodash": "4.17.11",
+    "popper.js": "1.15.0",
+    "scrollmagic": "2.0.6",
+    "slick-carousel": "1.8.1",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "what-input": "5.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "2.1.1",
+    "mini-css-extract-plugin": "0.5.0",
+    "motion-ui": "2.0.3",
+    "node-sass": "4.11.0",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "postcss-loader": "3.0.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1"
+  },
+  "scripts": {
+    "dev": "webpack --watch",
+    "prod": "webpack -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,207 @@
+/**
+ * $icon 
+ * $icon_hover
+ * $color
+ * $color_hover
+ */
+ @mixin mainMenu($icon, $icon_hover,$color, $color_hover ) {
+    .main-nav__deco {
+      background: url($icon);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display: block;
+      //width: auto;
+      height: 200px;
+      // @include media-breakpoint-down(xs) {
+      //     height: 0;
+      // }
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  
+    .main-nav__text {
+        font-size: 1rem;
+        font-family: 'Cera Pro Round';
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%);
+        color: $color;
+    }
+  
+    &.current,
+    &.active,
+    &:hover {
+        background: $color_hover;
+        > a {
+            .main-nav__deco {
+                background: url($icon_hover);
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+  
+            .main-nav__text {
+                color: white;
+            }
+        }
+    }
+  }
+  
+  /**
+   * $color
+   * $colorhover
+   */
+  @mixin mainSubnav($color, $colorhover) {
+    .main-nav {
+      &__subdiv {
+            &__ul {
+                &:after {
+                    position: absolute;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border: inset 21px;
+                    content: '';
+                    border-bottom-width: 0;
+                    border-top-style: solid;
+                    border-color: $color transparent transparent;
+                    left: 0;
+                    bottom: -18px;
+                    transform: rotate(-135deg);
+                }
+                &:before {
+                  position: absolute;
+                  content: '';
+                  background: white;
+                  width: calc(100% - 29px);
+                  height: 30px;
+                  bottom: -30px;
+                  left: 29px;
+                }
+  
+                li {
+                    a {
+                        color: $color;
+                    }
+                    &.active {
+                        a {
+                          font-family: 'Cera Pro Medium', sans-serif;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+  }
+  
+  /**
+   * $color
+   */  
+  @mixin headerBorderBottom($color) {
+    header.header {
+        border-bottom: 3px solid $color;
+    }
+  }
+  
+  /**
+   * $bgcolor
+   * $icon
+   */
+  @mixin pageLabel($bgcolor, $icon) {
+    height: 80px;
+    width: 68px;
+    background: $bgcolor;
+    position: relative;
+    &:after {
+        position: absolute;
+        height: 59px;
+        width: 66px;
+        content: '';
+        left: 0;
+        bottom: 6px;
+        background: url($icon);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+  }
+  
+  /**
+   *
+   *
+   */
+  
+  @mixin containerEffect($bgColor, $bgColorFull, $color, $colorFull, $bordercolor) {
+      &.normal {
+          .container {
+              background: $bgColor;
+              color: $color;
+              position: relative;
+              a {
+                  color: $color;
+              }
+  
+              &:after {
+                  position: absolute;
+                  display: block;
+                  width: 0;
+                  height: 0;
+                  border: inset 21px;
+                  content: '';
+                  border-bottom-width: 0;
+                  border-top-style: solid;
+                  border-color: $bordercolor transparent transparent;
+                  left: 0;
+                  bottom: -18px;
+                  transform: rotate(-135deg);
+              }
+              &:before {
+                  position: absolute;
+                  content: '';
+                  background: $bgColor;
+                  width: calc(100% - 29px);
+                  height: 31px;
+                  bottom: -30px;
+                  left: 29px;
+                }
+          }
+      }
+      
+      &.full {
+          background: $bgColorFull;
+          position: relative;
+          .container {
+              color: $colorFull;
+          }
+      }
+  }
+  
+  
+  @mixin decoTriangular($bordercolor, $bgColor) {
+      &:after {
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          border: inset 21px;
+          content: '';
+          border-bottom-width: 0;
+          border-top-style: solid;
+          border-color: $bordercolor transparent transparent;
+          left: 0;
+          bottom: -18px;
+          transform: rotate(-135deg);
+      }
+      &:before {
+          position: absolute;
+          content: '';
+          background: $bgColor;
+          width: calc(100% - 29px);
+          height: 31px;
+          bottom: -30px;
+          left: 29px;
+        }
+  }
+  

@@ -1,0 +1,6 @@
+.vscode/
+Resources/Public/Images/
+dist/
+node_modules/
+package-lock.json
+
