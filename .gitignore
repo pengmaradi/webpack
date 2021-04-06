@@ -1,4 +1,7 @@
 .vscode/
+.DS_Store
+*/.DS_Store
+
 Resources/Public/Images/
 dist/
 node_modules/

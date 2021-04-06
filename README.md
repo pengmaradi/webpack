@@ -1,8 +1,8 @@
 # webpack
 
 ## first run 
-```npm install```
+```yarn install```
 
 ## then run npm dev
-```npm run dev```
+```yarn run dev```
 
