@@ -5,18 +5,6 @@ import { glightboxControl } from '../template/slideControl'
 const Lightbox = () => {
     Alpine.data('glightbox', () => ({
         lightbox: null,
-        orderMail(order: string) {
-            let link = `mailto:pengmaradi@gmail.com?subject= Pappmaché Bestellung ` + order
-            window.location.href = link;
-            return false;
-        },
-
-        orderSMS(order: string) {
-            let tel = `sms:+41763363847`,
-            link = tel + `&body=hallo, ich bestelle Pappmaché ` + order
-            window.location.href = link;
-            return false;
-        },
         
         gallery: [
             {
@@ -76,7 +64,7 @@ const Lightbox = () => {
                 })
                 // fix for html aria-hidden issue
                 .on('open', () => {
-                    const lightboxEl = document.querySelector('.glightbox') as HTMLElement;
+                    const lightboxEl = document.querySelector('.glightbox2') as HTMLElement;
                     if (lightboxEl) {
                         let parent = lightboxEl.parentElement;
                         while (parent && parent !== document.body) {
