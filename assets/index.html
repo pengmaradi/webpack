@@ -153,8 +153,26 @@
 
 		<main class="container mx-auto mt-20 sm:mt-10 p-2 min-h-screen">
 
-			<div id="app">hello</div>
-			<div class="gallery-container" x-data="glightbox">
+			<div id="app" class="x-slash mb-5">hello</div>
+
+			<div class="relative w-full h-50 sm:h-80 md:h-120 lg:h-150 overflow-hidden border-0 rounded-xl bg-transparent">
+			
+				<div class="absolute inset-0 bg-blue-700 flex items-center justify-start px-16 clip-left">
+					<h1 class="text-white text-2xl lg:text-6xl font-bold">Project</h1>
+				</div>
+			
+				<div class="absolute inset-0 clip-right">
+					<img src="https://picsum.photos/1400/700" alt="Random landscape"
+						class="rounded-tr-xl" />
+					<div class="absolute top-0 right-8">
+						<span class="bg-orange-400 text-white px-6 py-3 text-xl font-semibold">
+							project
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="gallery-container mt-10 lg:mt-20" x-data="glightbox">
 				<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 
 					<template x-for="(item, index) in gallery" :key="index">

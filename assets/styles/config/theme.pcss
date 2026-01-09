@@ -3,6 +3,8 @@
      * 1rem = 16px
      * --spacing: 4px;
      * default --spacing: .25rem = 4px
+     * 
+     * use: `class="3xl:grid-cols-6 ..."`
      */
     
     --breakpoint-xs: 20rem; /* 20rem * 16 = 320px; */
@@ -28,18 +30,30 @@
     --container-6xl: 72rem;
     --container-7xl: 80rem;
 
+    /**
+     * 用于控制元素宽高比的实用程序
+     * use: `class="aspect-3/2 object-cover ..."`
+     */
     --aspect-none: 0;
     --aspect-square: 1 / 1;
     --aspect-video: 16 / 9;
     --aspect-img: 4 / 3;
     --aspect-hero: 21 / 9;
 
+    /**
+     *
+     * use: `class="font-dancing ..."`
+     */
     --font-noto: 'NotoSerifSC', 'sans-serif';
     --font-roboto: 'Roboto', 'sans-serif';
     --font-comnis: 'Commissioner', 'sans-serif';
     --font-oswald: 'Oswald', 'sans-serif';
     --font-dancing: 'DancingScript';
 
+    /**
+     *
+     * use: `class="text-grey-100 bg-grey-500 ..."`
+     */
     --color-grey-100: #F7F7F7;
     --color-grey-200: #EBEBEB;
     --color-grey-300: #DDDDDD;

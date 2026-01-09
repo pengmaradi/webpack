@@ -43,11 +43,7 @@ a {
     @apply text-blue-500;
 }
 
-.gslide-description {
-    .gdesc-inner {
-        @apply dark:bg-slate-400;
-    }
-}
+
 
 .scale {
     animation: scale 1s;
@@ -62,6 +58,38 @@ a {
 
     a {
         @apply text-sky-300 dark:text-sky-500;
+    }
+}
+
+@layer base {
+    .x-slash {
+        @apply relative flex;
+
+        &::before {
+            @apply top-2 sm:top-2.5 lg:top-3 translate-y-[-50%] content-[''] absolute inline-block bg-secondary h-6 -left-5 w-[5px] ;
+        }
+    }
+
+    .x-clip-left {
+        @screen sm {
+            clip-path: polygon(116px 24px, 0 100%, 100% 100%, 100% 24px);
+        }
+
+        @screen lg {
+            clip-path: polygon(224px 48px, 0 100%, 100% 100%, 100% 48px);
+        }
+    }
+
+    .clip-left {
+        clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+    }
+
+    .clip-right {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+
+        img {
+            @apply w-full h-full object-cover object-center mt-8;
+        }
     }
 }
 
