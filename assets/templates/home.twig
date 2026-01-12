@@ -1,0 +1,8 @@
+{% extends "layout" %}
+
+{% block content %}
+<h1 class="text-center my-10">{{ headline }}</h1>
+<p class="x-slash">{{ description }}</p>
+{% include "components/carousel" %}
+{% include "components/gallery" %}
+{% endblock %}

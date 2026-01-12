@@ -1,0 +1,47 @@
+<nav class="flex p-3 justify-between bg-neutral-secondary-medium" aria-label="main-navigation">
+    <a href="/" class="flex items-center">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-7 me-3" alt="Logo" />
+        <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">Flow</span>
+    </a>
+    
+    <ul class="flex flex-wrap items-center justify-between gap-4">
+        <li><a href="/">home</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/product">product</a></li>
+        <li><a href="/news">news</a></li>
+    </ul>
+
+    {% include "components/searchbox" %}
+    {% include "components/darkMode" %}
+
+</nav>
+<!-- Breadcrumb -->
+<nav class="flex p-3" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+        <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
+                </svg>
+            </a>
+        </li>
+        {% if page != 'home' %}
+        <li>
+            <div class="flex items-center space-x-1.5">
+                <svg class="w-3.5 h-3.5 rtl:rotate-180 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m9 5 7 7-7 7" />
+                </svg>
+                
+                <a href="/{{ page }}"
+                    class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">{{ page }}</a>
+                
+                
+            </div>
+        </li>
+        {% endif %}
+    </ol>
+</nav>

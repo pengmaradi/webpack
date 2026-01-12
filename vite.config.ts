@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+//import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const PROJECT_ROOT = __dirname;
-
+// 项目根目录
+const projectRoot = process.cwd()
 
 // 多入口
 const ENTRY = {
     app: resolve(PROJECT_ROOT, 'assets/app.ts'),
+    //input: resolve(PROJECT_ROOT,'index.twig'),
     // print: resolve(PROJECT_ROOT, 'assets/styles/print.pcss'),
     // debug: resolve(PROJECT_ROOT, 'assets/styles/debug.pcss'),
     // pdf: resolve(PROJECT_ROOT, 'assets/styles/pdf.pcss'),
@@ -21,28 +23,45 @@ export default defineConfig(({ mode }) => {
 
   return {
     root: resolve(PROJECT_ROOT, 'assets'),
+
+    base: '/',
     server: {
       host: '0.0.0.0',
       port: 8989,
+      open: true,
+      cors: true,
     },
 
-    base: '/',
     publicDir: false,
 
     build: {
       manifest: true,
       outDir: resolve(PROJECT_ROOT, OUTPUT),
+      sourcemap: true,
       emptyOutDir: true,
       copyPublicDir: false,
 
       rollupOptions: {
         input: ENTRY,
-        output: {
-          entryFileNames: '[name].js',
-          chunkFileNames: '[name].js',
-          assetFileNames: '[name][extname]',
-        },
+        // output: {
+        //   entryFileNames: '[name].js',
+        //   chunkFileNames: '[name].js',
+        //   assetFileNames: '[name][extname]',
+        // },
       },
+    },
+
+  
+    // 路径别名配置
+    resolve: {
+      alias: {
+        '@': resolve(projectRoot, 'assets'),
+        '@styles': resolve(projectRoot, 'assets/styles'),
+        '@datepicker-css': resolve(__dirname, 'node_modules/flowbite-datepicker/dist/css/datepicker.min.css'),
+        '@images': resolve(projectRoot, 'assets/images'),
+        '@fonts': resolve(projectRoot, 'assets/fonts'),
+        '@icons': resolve(projectRoot, 'assets/icons'),
+      }
     },
 
     css: {
@@ -50,15 +69,18 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
-      viteStaticCopy({
-        targets: [
-          { src: 'fonts/*', dest: 'fonts/' },
-          { src: 'icons/*', dest: 'Icons/' },
-          { src: 'images/*', dest: 'images/' },
+      /*
+      //viteStaticCopy({
+        //targets: [
+          //{ src: 'fonts/*', dest: 'fonts/' },
+          //{ src: 'icons/*', dest: 'Icons/' },
+          //{ src: 'images/*', dest: 'images/' },
           // try htmx
           //{src: resolve(__dirname, 'node_modules/htmx.org/dist/htmx.min.js'), dest: 'js/'},
-        ],
-      }),
+        //],
+      //}),
+      */
     ],
+
   };
 });

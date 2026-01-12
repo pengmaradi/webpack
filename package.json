@@ -13,8 +13,11 @@
     "@types/alpinejs": "^3.13.11",
     "@types/alpinejs__intersect": "^3.13.4",
     "@types/node": "^25.0.3",
+    "@types/twig": "^1.12.17",
+    "twig": "^1.17.1",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-static-copy": "^3.1.4"
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.15.2",
@@ -23,11 +26,9 @@
     "alpinejs": "^3.15.2",
     "flowbite": "^4.0.1",
     "glightbox": "^3.3.1",
-    "htmx.org": "^2.0.8",
     "keen-slider": "^6.8.6",
     "plyr": "^3.8.3",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
-    "vite-plugin-static-copy": "^3.1.4"
+    "tailwindcss": "^4.1.18"
   }
 }
