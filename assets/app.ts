@@ -7,7 +7,10 @@ import 'flowbite'
 import intersect from '@alpinejs/intersect'
 import DarkMode from './ts/alpine/DarkMode'
 import SearchBox from './ts/alpine/ SearchBox'
-
+import Lightbox from './ts/alpine/Lightbox'
+import MySplider from './ts/alpine/MySplider'
+import CustomKeenSlider from './ts/alpine/CustomKeenSlider'
+import FetchNews from './ts/alpine/FetchNews'
 
 let page = resolvePageId()
 const html = renderCurrentPage({
@@ -29,6 +32,10 @@ if (titleEl) {
 const initializeComponents = () => {
   DarkMode()
   SearchBox()
+  Lightbox()
+  MySplider()
+  CustomKeenSlider()
+  FetchNews()
 }
 
 

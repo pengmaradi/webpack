@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { resolve } from 'node:path';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -20,10 +20,13 @@ const ENTRY = {
 const OUTPUT = resolve(PROJECT_ROOT, 'public/');
 
 export default defineConfig(({ mode }) => {
-
+  const env = loadEnv(mode, process.cwd(), '')
+  
   return {
+    define: {
+      'import.meta.env.VITE_NEWS_API_KEY': JSON.stringify(env.VITE_NEWS_API_KEY),
+    },
     root: resolve(PROJECT_ROOT, 'assets'),
-
     base: '/',
     server: {
       host: '0.0.0.0',
