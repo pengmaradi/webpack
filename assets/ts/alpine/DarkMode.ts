@@ -14,7 +14,7 @@ const DarkMode = () => {
         },
         addMacOSClass() {
             if (navigator.userAgent.includes('Macintosh')) {
-            document.documentElement.classList.add('os-macos');
+                document.documentElement.classList.add('os-macos');
             }
         },
 

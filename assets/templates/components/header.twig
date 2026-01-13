@@ -1,10 +1,10 @@
-<nav class="flex p-3 justify-between bg-neutral-secondary-medium" aria-label="main-navigation">
+<nav class="flex p-3 justify-between bg-neutral-secondary-medium" aria-label="main-navigation" x-data="{show: false}">
     <a href="/" class="flex items-center">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-7 me-3" alt="Logo" />
         <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">Flow</span>
     </a>
-    
-    <ul class="flex flex-wrap items-center justify-between gap-4">
+
+    <ul class="hidden md:flex flex-wrap items-center justify-between gap-4">
         <li><a href="/">home</a></li>
         <li><a href="/about">about</a></li>
         <li><a href="/product">product</a></li>
@@ -14,7 +14,29 @@
     {% include "components/searchbox" %}
     {% include "components/darkMode" %}
 
+    <div class="flex md:hidden absolute right-12 items-center gap-3">
+
+        <!-- Hamburger Button (mobile only) -->
+        <button id="hamburger-btn" class="flex flex-col md:hidden gap-1 p-2"
+            @click="show=!show"
+            aria-label="Toggle menu"
+            aria-expanded="false">
+            <span class="block w-6 h-0.5 bg-sky-500 transition-transform" :class="show && 'rotate-45 translate-y-2'"></span>
+            <span class="block w-6 h-0.5 bg-sky-500 transition-opacity" :class="show && 'opacity-0'"></span>
+            <span class="block w-6 h-0.5 bg-sky-500 transition-transform" :class="show && '-rotate-45 -translate-y-1'"></span>
+        </button>
+    </div>
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" x-show="show" class="absolute left-0 top-14 right-0 flex justify-center bg-neutral-secondary-medium px-3 pb-3">
+        <ul class="flex flex-col gap-3">
+            <li><a href="/" class="block py-2">home</a></li>
+            <li><a href="/about" class="block py-2">about</a></li>
+            <li><a href="/product" class="block py-2">product</a></li>
+            <li><a href="/news" class="block py-2">news</a></li>
+        </ul>
+    </div>
 </nav>
+
 <!-- Breadcrumb -->
 <nav class="flex p-3" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
