@@ -4,7 +4,11 @@ export function autoRegisterTwig() {
   // 1. 扫描所有 twig 文件
   const modules = import.meta.glob(
     '../templates/**/*.twig',
-    { as: 'raw', eager: true }
+    { 
+      query: '?raw',
+      import: 'default',
+      eager: true 
+    }
   )
 
   // 2. 注册到 twig.js
