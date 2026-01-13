@@ -10,7 +10,7 @@ const Lightbox = () => {
             {
                 type:'image',
                 video: '',
-                img: 'https://mdbcdn.b-cdn.net/img/new/slides/086.webp',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/096.webp',
                 alt: 'the first image',
                 tite: 'hallo welt',
                 description: 'this is about glightbox',
@@ -26,6 +26,14 @@ const Lightbox = () => {
             {
                 type:'image',
                 video: '',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/080.webp',
+                alt: 'the first image',
+                tite: 'hallo welt',
+                description: 'this is about glightbox',
+            },
+            {
+                type:'video',
+                video: 'https://www.youtube.com/watch?v=_Yz_-4XNZS0',
                 img: 'https://mdbcdn.b-cdn.net/img/new/slides/087.webp',
                 alt: 'the first image',
                 tite: 'hallo nina',
@@ -34,7 +42,7 @@ const Lightbox = () => {
             {
                 type:'image',
                 video: '',
-                img: 'https://mdbcdn.b-cdn.net/img/new/slides/088.webp',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/058.webp',
                 alt: 'the first image',
                 tite: 'hallo youtube',
                 description: 'this is about glightbox',
@@ -46,7 +54,31 @@ const Lightbox = () => {
                 alt: '007',
                 tite: '007',
                 description: 'just testing',
-            }
+            },
+            {
+                type:'image',
+                video: '',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/090.webp',
+                alt: 'the first image',
+                tite: 'hallo welt',
+                description: 'this is about glightbox',
+            },
+            {
+                type:'video',
+                video: 'https://www.youtube.com/watch?v=3L6qMDAZJzo',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/095.webp',
+                alt: 'the first image',
+                tite: 'hallo welt',
+                description: 'this is about glightbox',
+            },
+            {
+                type:'video',
+                video: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                img: 'https://mdbcdn.b-cdn.net/img/new/slides/006.webp',
+                alt: 'the first image',
+                tite: 'hallo welt',
+                description: 'this is about glightbox',
+            },
         ],
 
         init() {

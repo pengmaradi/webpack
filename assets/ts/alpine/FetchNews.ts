@@ -4,12 +4,10 @@ const FetchNews = () => {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY
 
     Alpine.data('fetchNews', () => ({
-        url: `https://newsapi.org/v2/top-headlines/sources?language=en&apiKey=${API_KEY}`,
+        url: `//newsapi.org/v2/top-headlines/sources?language=en&apiKey=${API_KEY}`,
         news: {},
         init() {
             this.news = this.fetchData(this.url)
-            console.log(this.news);
-            
         },
         async fetchData(url: string) {
             try {
