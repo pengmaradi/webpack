@@ -59,7 +59,6 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': resolve(projectRoot, 'assets'),
         '@styles': resolve(projectRoot, 'assets/styles'),
-        '@datepicker-css': resolve(__dirname, 'node_modules/flowbite-datepicker/dist/css/datepicker.min.css'),
         '@images': resolve(projectRoot, 'assets/images'),
         '@fonts': resolve(projectRoot, 'assets/fonts'),
         '@icons': resolve(projectRoot, 'assets/icons'),
