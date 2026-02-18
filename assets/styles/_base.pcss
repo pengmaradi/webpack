@@ -1,0 +1,58 @@
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  body {
+    @apply bg-gray-400 dark:bg-black dark:text-white;
+
+    #app {
+      @apply flex flex-col min-h-screen;
+
+      header {
+        &.header {
+          @apply md:container mt-5;
+        }
+      }
+      
+      main {
+        &.main {
+          @apply container flex-grow mt-20;
+        }
+      }
+      
+      footer {
+        &.footer {
+          @apply container my-10;
+        }
+      }
+    }
+
+    .morphing-container {
+      @apply fixed inset-0 top-0 -z-1 overflow-hidden pointer-events-none;
+
+      .morphing-blob {
+        @apply absolute will-change-transform;
+      }
+    }
+  }
+}
+
+.deco {
+  @apply fixed inset-0 -z-1 bg-sky-900/90 h-screen w-full
+          transition-all duration-300 ease-in-out
+          md:hidden;
+}
+
+
+.main-nav {
+  @apply fixed left-1/2 mt-20 -translate-x-1/2
+          flex-col gap-4
+          transition-all duration-300 ease-in-out
+          md:flex md:flex-row md:mt-0 md:static md:translate-x-0 md:opacity-100 md:pointer-events-auto
+          md:translate-y-0;
+}
